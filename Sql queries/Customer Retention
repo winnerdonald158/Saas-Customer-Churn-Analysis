@@ -1,0 +1,69 @@
+                                                                         Q4 Business Questions
+                                                      Which subscription plans experience the highest churn?
+                       Query
+SELECT
+    plan_type,
+    COUNT(*) AS total_users,
+    SUM(CASE WHEN churned = 'Churned' THEN 1 ELSE 0 END) AS churned_users,
+    ROUND(
+        SUM(CASE WHEN churned = 'Churned' THEN 1 ELSE 0 END) * 100.0 / COUNT(*),
+        2
+    ) AS churn_rate
+FROM users
+GROUP BY plan_type
+ORDER BY churn_rate DESC;
+
+                                        
+                                                                                 Findings:
+The starter plan type who had the highest number of users experiences the highest churned rate and churned users (27.29) while enterprise with the lowest users had the second highest churn rate (21.51)
+
+
+                                                                                 Why did it happen?
+Users that subscribe to the starter plan type experience high ticket usage, barely using the products and low customer satisfaction score rate indicating a decline or decrease in their engagement before churning or leaving
+Investigation showed that Users who  subscribed to the starter plan type experience high ticket usage, they  barely use the products and have low customer satisfaction score rate indicating lower engagement before churning
+
+
+                                                                            Why should leadership care?
+If there is a higher number of churn users will make our users nor upgrade and will lead to a long term decrease in revenue
+Starter customers represent the company's largest customer segment, improving retention in this group could significantly reduce customer losses and protect revenue loss. And also users leaving the plan will not lead to upgrade in the next plan
+
+
+                                                                                    Recommendation?
+A smooth onboarding process, this helps customers feel confident about their choice from day one, that means having  a clear product tutorials, proactive welcome messages during the first days or weeks of usage
+Also checking the nps scores of our users to understand our users and know if they are receiving and value from the products
+
+
+
+
+                                                                
+
+                                                                Q5.Business question
+                                                            What is the overall churn rate?
+
+                       Query
+SELECT
+	COUNT(*)total_users,
+	SUM(CASE WHEN churned ='Churned' THEN 1 ELSE 0 END) AS churned_users,
+	ROUND(
+		SUM(CASE WHEN churned ='Churned' THEN 1 ELSE 0 END) * 100 / COUNT(*),2 
+	)AS churn_rate
+FROM users;
+
+
+
+
+                                                                Q6.Business question
+                                                 Which industries experience the highest churn?
+
+
+                              Query
+SELECT 
+	industry,
+	COUNT(*) total_users,
+	SUM(CASE WHEN churned = 'Churned' THEN 1 ELSE 0 END )churn_users,
+	ROUND(
+	SUM(CASE WHEN churned = 'Churned' THEN 1 ELSE 0 END ) * 100/COUNT(*),2
+	)Churn_rate
+FROM users;
+GROUP BY industry
+ORDER BY Churn_rate DESC;
