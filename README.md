@@ -1,6 +1,6 @@
-                                                                  # Saas-Customer-Churn-Analysis
+                                          # Saas-Customer-Churn-Analysis
                                                                                            
-                                                                         Project Overview
+                                                Project Overview
 
 Customer churn is one of the biggest challenges forany  SaaS businesses because losing customers directly impacts recurring revenue and long-term growth.
 
@@ -9,7 +9,7 @@ In this project, I used PostgreSQL and Power BI to analyze customer behavior, id
 Rather than simply building charts, this project focuses on answering business questions and turning data into actionable insights.
 
                                                                                        
-                                                                           Business Problem
+                                                  Business Problem
 
 The company wanted to understand:
 Which customers are most likely to churn?,
@@ -18,7 +18,7 @@ Which subscription plans are most affected?,
 What customer behaviors signal churn risk?,
 Which customers should Customer Success prioritize?,
 
-                                                                             Project Goal
+                                                     Project Goal
 The objective of this analysis was to identify the major drivers of customer churn and provide recommendations that can help the business improve retention and protect recurring revenue:
 Tools Used:
 * PostgreSQL
