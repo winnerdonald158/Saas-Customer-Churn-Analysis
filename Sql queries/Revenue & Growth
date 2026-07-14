@@ -1,0 +1,54 @@
+                                                                  BUSINESS QUESTION
+                                             Which customer segments generate the highest revenue?
+
+              Query
+SELECT 
+plan_type,
+SUM(total_revenue) total_revenue,
+COUNT(*)customer_count
+FROM users
+GROUP BY plan_type
+ORDER BY total_revenue DESC;
+
+                                         Findings: (what happened)
+The business plan type had the highest number of revenue with fewer users (800) while the starter plan type had the lowest number of revenue with the highest users(2323)
+
+                                             Why did it happen?
+The Starter plan has the lowest monthly subscription price and also the largest customer base. Further analysis showed these customers have lower feature adoption, more support tickets, and lower satisfaction scores, which contributed to higher churn and lower revenue generation.
+Why should leadership care?
+Starter customers represent the company's largest customer segment, improving retention in this group could significantly reduce customer losses and protect recurring revenue.
+
+                                               Recommendation?
+Improve the onboarding experience for Starter customers, simplify access to key features, guiding users on how they will use the product effectively. Also, identifying customers submitting multiple support tickets and collecting early feedback to resolve product frustrations before they decide to leave.
+
+
+
+
+
+                                                                                Q2. Business question
+                                                                    Which industries generate the highest LTV?
+
+                              
+                                 Query
+SELECT 
+	industry,
+	SUM(ltv_12m) lifetime_value,
+	COUNT(*)users_count
+FROM users
+GROUP BY industry
+ORDER BY lifetime_value DESC;
+
+                                    
+
+
+                                                                                  Q3.Business questions
+                                                           Which acquisition channels bring the most valuable customers?
+
+                Query
+SELECT 
+acquisition_channel,
+SUM(total_revenue)total_revenue,
+COUNT(*)customer_count
+FROM users
+GROUP BY acquisition_channel
+ORDER BY total_revenue DESC;
