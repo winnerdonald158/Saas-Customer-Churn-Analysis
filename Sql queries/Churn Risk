@@ -1,0 +1,41 @@
+                                                                        Q11.Business question
+                                                     What behaviors are common among customers who churn?
+            Query
+SELECT
+churned,
+ROUND(AVG(sessions_per_month),2),
+ROUND(AVG(support_tickets),2),
+ROUND(AVG(nps_score),2)
+FROM user_monthly
+GROUP BY churned;
+
+                                                                      Q12.Business question
+                                            Which customer groups should be prioritized by Customer Success teams?
+                  Query
+SELECT
+CASE WHEN company_size <=50 THEN 'small_company'
+WHEN company_size BETWEEN 51 AND 300 THEN 'Medium_company'
+ELSE 'large_company'
+END AS company_size_group,
+plan_type,
+SUM(total_revenue) total_revenue,
+SUM(ltv_12m)lifetime_value,
+ROUND(SUM(CASE WHEN churned ='Churned' THEN 1 ELSE 0 END)*100.0/COUNT(*),2)Churn_rate,
+COUNT(*) AS total_customers,
+SUM(CASE WHEN churned='Churned' THEN 1 ELSE 0 END) AS churned_users
+FROM users
+GROUP BY CASE WHEN company_size <=50 THEN 'small_company'
+WHEN company_size BETWEEN 51 AND 300 THEN 'Medium_company'
+ELSE 'large_company' END,plan_type
+ORDER BY lifetime_value DESC;
+
+                                                                                          Findings:
+Here we are focusing on those with the highest churn rate and those that will generate the highest lifetime value
+The medium sized company that subscribe to the business plan type had the highest lifetime value while the large sized company that subscribed to the enterprise plan type had the highest churn rate
+
+                                                                                       Why did it happen?
+Most of our users with low sactisfaction score tend to have the highest churn rate because these users tend to experience issues while using the product
+
+                                                                                      
+                                                                                  Why should leadership care?
+Losing these set users with the highest churn rate will affect our revenue and also acquisition of new users or customers will require more revenue to used for the new users
