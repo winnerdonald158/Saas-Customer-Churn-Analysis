@@ -35,8 +35,7 @@ Tools Used:
 * Dashboard Design
 * Business Recommendations
 
-
-                                                                            Repository Structure
+                                                  Repository Structure
   📂 dashboard/
     Power BI Dashboard
 
@@ -49,7 +48,7 @@ Tools Used:
 README.md
 
 
-                                                                                   Dataset
+                                                     Dataset
 
 The dataset contains information about:
 
@@ -65,7 +64,7 @@ The dataset contains information about:
 * Customer churn status
 
 
-                                                                           Business Questions Answered
+                                             Business Questions Answered
 
 The analysis focused on answering questions such as:
 
@@ -90,7 +89,7 @@ What behaviors are common among customers who churn?,
 Which customer groups should Customer Success prioritize?,
 
 
-                                                                                     Key Findings
+                                                    Key Findings
 * Starter customers experience the highest churn:
 
 Although Starter customers make up the largest customer segment, they also record the highest churn rate, making them the biggest retention opportunity.
@@ -113,7 +112,7 @@ Medium-sized businesses generated the highest lifetime value, while large Enterp
 
 
 
-                                                                                        Dashboard
+                                                      Dashboard
 
 The Power BI dashboard highlights:
 
@@ -128,12 +127,12 @@ Login Behaviour,
 Support Issues,
 Subscription Plan Performance,
 
-                                                                       The dashboard was designed to answer one question quickly:
+                                        The dashboard was designed to answer one question quickly:
 
 Why are customers leaving, and what should the business focus on first?
 
                                                
-                                                                                    Technical Approach
+                                                    Technical Approach
 PostgreSQL,
 The SQL analysis used:
 Aggregate Functions,
@@ -150,7 +149,7 @@ The SQL focused on identifying customer behavior patterns rather than simply que
 
 
 
-                                                                                        Power BI
+                                                         Power BI
 
 The dashboard includes:
 Interactive KPI Cards,
@@ -162,7 +161,7 @@ Executive-Level Dashboard Design,
 Business Recommendations
 
                                                                                         
-                                                                             Based on the analysis, I recommended:
+                                               Based on the analysis, I recommended:
 
 Improve onboarding for Starter customers.
 Continuously monitor customer satisfaction (NPS).
