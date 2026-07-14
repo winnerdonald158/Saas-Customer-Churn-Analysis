@@ -1,0 +1,100 @@
+                                                                                           Q7.Business questions
+                                                                                Does low product usage increase churn risk?
+                                                         Query
+SELECT
+	CASE
+	WHEN product_usage = 0.00 THEN 'low_use'
+	ELSE 'high_use'
+	END AS product_cat,
+	COUNT(*)total_users,
+	SUM(CASE WHEN churned = 'Churned' THEN 1 ELSE 0 END)Churned_users,
+	ROUND(
+	SUM(CASE WHEN churned = 'Churned' THEN 1 ELSE 0 END) *100/COUNT(*)
+	)churn_rate
+FROM user_monthly
+GROUP BY product_cat;
+
+
+                                                            Finding:
+The total number of users that did not use the product are higher than those that used it. Also, those that used the product had higher churn rate compared to those that did not use 
+
+                                                       Why did it happen?
+Further analysis showed that many users who churned logged in infrequently, but when they did, they used the product effectively. Also, they submitted more support tickets and reported lower satisfaction scores,
+suggesting that low engagement and unresolved issues contributed to churn.
+
+                                                     Why should leadership care?
+Losing these users may result in a decrease in sales and profitability and acquisition of new customers can be costly
+
+                                                              Recommendation?
+Introduce proactive customer support for users with declining login frequency, simplify key product workflows, and encourage consistent engagement through personalized in-app guidance.
+
+
+
+
+
+
+                                                                                                 Q8.Business question
+                                                                                    Does customer satisfaction (NPS) influence retention?
+                                                    Query
+SELECT
+	CASE WHEN nps_score BETWEEN 0.00 AND 3.00 THEN 'low_rate'
+	WHEN nps_score BETWEEN 4.00 AND 6.00 THEN 'moderate_rate'
+	ELSE 'high_rate'
+	END AS users_satisfaction,
+	COUNT(*)total_users,
+	SUM(CASE WHEN churned ='Churned' THEN 1 ELSE 0 END)churned_users,
+	SUM(CASE WHEN churned ='Active' THEN 1 ELSE 0 END)active_users,
+	ROUND(
+	SUM(CASE WHEN churned = 'Churned' THEN 1 ELSE 0 END) *100.0/COUNT(*),2
+	)churn_rate
+FROM user_monthly
+GROUP BY users_satisfaction;
+
+                                                         Findings:
+Low users rating had the highest churn rate (2.83) while high user rate had the lowest churn rate(0.19) and churn users 
+
+                                                    Why did it happen?
+Further analysis showed that customers with low satisfaction scores also submitted more support tickets, suggesting unresolved product or service issues contributed to higher churn.
+
+                                                Why should leadership care?
+Losing these set users with the low satisfactory rate will result in  acquisition of new users or customers will require more revenue resulting a decrease in profitability
+
+                                                      Recommendation?
+improving our product and service quality by conducting customer survey and feedback to identify area where they need to be improved and resolving with immediate effect
+continuous monitoring of nps score after product improvements to evaluate whether customer satisfaction and retention improve over time.
+
+
+
+                                                                                                              Q9.Business question
+                                                                                                   Do support tickets increase churn likelihood?
+                   Query
+SELECT
+	CASE
+	WHEN support_tickets BETWEEN 0 AND 3 THEN 'low_ticket'
+	WHEN support_tickets BETWEEN 4 AND 6 THEN 'moderate_ticket'
+	ELSE 'high_ticket'
+	END AS issued_ticket,
+	COUNT(*)total_users,
+	SUM(CASE WHEN churned = 'Churned' THEN 1 ELSE 0 END)Churned_users,
+	ROUND(
+	SUM(CASE WHEN churned = 'Churned' THEN 1 ELSE 0 END) *100/COUNT(*)
+	)churn_rate
+FROM users
+GROUP BY issued_ticket;
+
+                                                                                                                Q10.Business question
+                                                                                                     How does active seat usage impact retention?
+Query
+SELECT
+	CASE WHEN active_seats BETWEEN 0 AND 15 THEN 'low_active_seats_usage'
+	WHEN active_seats BETWEEN 16 AND 50 THEN 'mid_active_seats_usage'
+	ELSE 'high_active_seats_usage'
+	END AS active_seats_users,
+	COUNT(*)total_users,
+	SUM(CASE WHEN churned ='Churned' THEN 1 ELSE 0 END)churned_users,
+	SUM(CASE WHEN churned ='Active' THEN 1 ELSE 0 END)active_users,
+	ROUND(
+	SUM(CASE WHEN churned = 'Churned' THEN 1 ELSE 0 END) *100.0/COUNT(*),2
+	)churn_rate
+FROM user_monthly
+GROUP BY active_seats_users;
