@@ -1,6 +1,6 @@
-                                                                                        # Saas-Customer-Churn-Analysis
+                                                                  # Saas-Customer-Churn-Analysis
                                                                                            
-                                                                                           Project Overview
+                                                                         Project Overview
 
 Customer churn is one of the biggest challenges forany  SaaS businesses because losing customers directly impacts recurring revenue and long-term growth.
 
@@ -9,7 +9,7 @@ In this project, I used PostgreSQL and Power BI to analyze customer behavior, id
 Rather than simply building charts, this project focuses on answering business questions and turning data into actionable insights.
 
                                                                                        
-                                                                                           Business Problem
+                                                                           Business Problem
 
 The company wanted to understand:
 Which customers are most likely to churn?,
@@ -18,7 +18,7 @@ Which subscription plans are most affected?,
 What customer behaviors signal churn risk?,
 Which customers should Customer Success prioritize?,
 
-                                                                                             Project Goal
+                                                                             Project Goal
 The objective of this analysis was to identify the major drivers of customer churn and provide recommendations that can help the business improve retention and protect recurring revenue:
 Tools Used:
 * PostgreSQL
@@ -36,7 +36,7 @@ Tools Used:
 * Business Recommendations
 
 
-                                                                                                Repository Structure
+                                                                            Repository Structure
   📂 dashboard/
     Power BI Dashboard
 
@@ -49,7 +49,7 @@ Tools Used:
 README.md
 
 
-                                                                                                    Dataset
+                                                                                   Dataset
 
 The dataset contains information about:
 
@@ -65,7 +65,7 @@ The dataset contains information about:
 * Customer churn status
 
 
-                                                                                           Business Questions Answered
+                                                                           Business Questions Answered
 
 The analysis focused on answering questions such as:
 
@@ -90,7 +90,7 @@ What behaviors are common among customers who churn?,
 Which customer groups should Customer Success prioritize?,
 
 
-                                                                                                  Key Findings
+                                                                                     Key Findings
 * Starter customers experience the highest churn:
 
 Although Starter customers make up the largest customer segment, they also record the highest churn rate, making them the biggest retention opportunity.
@@ -113,7 +113,7 @@ Medium-sized businesses generated the highest lifetime value, while large Enterp
 
 
 
-                                                                                                    Dashboard
+                                                                                        Dashboard
 
 The Power BI dashboard highlights:
 
@@ -128,12 +128,12 @@ Login Behaviour,
 Support Issues,
 Subscription Plan Performance,
 
-                                                                                The dashboard was designed to answer one question quickly:
+                                                                       The dashboard was designed to answer one question quickly:
 
 Why are customers leaving, and what should the business focus on first?
 
                                                
-                                                                                                Technical Approach
+                                                                                    Technical Approach
 PostgreSQL,
 The SQL analysis used:
 Aggregate Functions,
@@ -150,7 +150,7 @@ The SQL focused on identifying customer behavior patterns rather than simply que
 
 
 
-                                                                                                      Power BI
+                                                                                        Power BI
 
 The dashboard includes:
 Interactive KPI Cards,
@@ -162,7 +162,7 @@ Executive-Level Dashboard Design,
 Business Recommendations
 
                                                                                         
-                                                                                        Based on the analysis, I recommended:
+                                                                             Based on the analysis, I recommended:
 
 Improve onboarding for Starter customers.
 Continuously monitor customer satisfaction (NPS).
